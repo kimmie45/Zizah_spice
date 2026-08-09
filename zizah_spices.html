@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zizah Spices & Naturheal</title>
+    <!-- Zizah Spice Website Icon / Favicon -->
+    <link rel="icon" type="image/png" href="zizah-spice-icon.png">
+    <link rel="apple-touch-icon" href="zizah-spice-icon.png">
+    
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <!-- Header / Navigation -->
+    <header class="bg-stone-900 text-stone-100 shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl font-bold tracking-wide text-amber-500 brand-font">Zizah Spices</span>
+                <span class="text-xs uppercase tracking-widest text-stone-400 border-l border-stone-700 pl-3 hidden sm:inline">Naturheal</span>
+            </div>
+            <nav class="space-x-6 text-sm font-medium">
+                <a href="#products" class="hover:text-amber-400 transition">Products</a>
+                <a href="#about" class="hover:text-amber-400 transition">About</a>
+                <a href="#contact" class="hover:text-amber-400 transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-stone-900 via-stone-800 to-amber-950 text-white py-20 px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl sm:text-6xl font-bold mb-6 brand-font text-amber-400">Pure Organic Spices & Natural Remedies</h1>
+            <p class="text-lg text-stone-300 mb-8 font-light">Brought to you from Sinza, Dar es Salaam. Elevate your culinary experience and wellness naturally.</p>
+            <a href="#products" class="bg-amber-600 hover:bg-amber-500 text-white font-medium px-8 py-3 rounded-full shadow-lg transition duration-300">Explore Catalog</a>
+        </div>
+    </section>
+
+    <!-- Product Showcase Anchor -->
+    <main id="products" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold brand-font text-stone-900">Our Signature Selection</h2>
+            <p class="text-stone-600 mt-2">Crafted with care for your health and kitchen.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Sample Product Card -->
+            <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden hover:shadow-md transition">
+                <div class="bg-amber-50 h-48 flex items-center justify-center text-amber-800 font-medium">
+                    [ Organic Spice Image ]
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold brand-font mb-2">Natural Healing Spice Blend</h3>
+                    <p class="text-stone-600 text-sm mb-4">A premium mix designed to boost wellness and add rich authentic flavor.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-amber-700 font-bold">Tsh 10,000</span>
+                        <a href="https://wa.me/255000000000?text=Hello%20Zizah%20Spices,%20I%20want%20to%20order%20the%20Natural%20Healing%20Spice%20Blend" target="_blank" class="bg-green-600 hover:bg-green-500 text-white text-xs px-4 py-2 rounded-lg font-medium transition">Order via WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-stone-900 text-stone-400 py-10 text-center text-sm">
+        <p>&copy; 2026 Zizah Spices & Naturheal. Located in Sinza, Dar es Salaam.</p>
+    </footer>
+
+</body>
+</html>
