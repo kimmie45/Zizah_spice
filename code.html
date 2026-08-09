@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zizah Spices | Modern Apothecary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#445a35",
+                    "inverse-on-surface": "#f2f0ed",
+                    "on-primary-fixed-variant": "#7c2d13",
+                    "surface-container-high": "#eae8e4",
+                    "on-surface": "#1b1c1a",
+                    "surface-dim": "#dbdad6",
+                    "secondary-fixed": "#ffdcc3",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#55423d",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "background": "#fbf9f5",
+                    "secondary-fixed-dim": "#ffb77d",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#2f1500",
+                    "surface-tint": "#9b4428",
+                    "outline": "#89726c",
+                    "primary-fixed": "#ffdbd0",
+                    "surface-container-highest": "#e4e2de",
+                    "primary": "#6f240a",
+                    "on-secondary-container": "#663500",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#30312e",
+                    "on-primary-container": "#ffb8a3",
+                    "outline-variant": "#dcc1b9",
+                    "surface": "#fbf9f5",
+                    "primary-fixed-dim": "#ffb59f",
+                    "secondary-container": "#fe932c",
+                    "surface-container": "#efeeea",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#b5cea0",
+                    "surface-container-low": "#f5f3ef",
+                    "tertiary": "#2e4220",
+                    "error": "#ba1a1a",
+                    "primary-container": "#8e3a1f",
+                    "surface-variant": "#e4e2de",
+                    "surface-bright": "#fbf9f5",
+                    "secondary": "#904d00",
+                    "on-tertiary-fixed": "#0d2003",
+                    "on-secondary-fixed-variant": "#6e3900",
+                    "on-background": "#1b1c1a",
+                    "inverse-primary": "#ffb59f",
+                    "on-tertiary-fixed-variant": "#384d29",
+                    "on-tertiary-container": "#b7d0a2",
+                    "on-primary-fixed": "#3a0a00",
+                    "tertiary-fixed": "#d1ebba"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "md": "24px",
+                    "margin-desktop": "64px",
+                    "xl": "80px",
+                    "lg": "48px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Libre Caslon Text"],
+                    "body-md": ["Work Sans"],
+                    "label-caps": ["Work Sans"],
+                    "headline-sm": ["Libre Caslon Text"],
+                    "display-lg": ["Libre Caslon Text"],
+                    "display-lg-mobile": ["Libre Caslon Text"],
+                    "body-lg": ["Work Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f5;
+            color: #1b1c1a;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .organic-texture {
+            background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        .apothecary-card {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .apothecary-card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full bg-background z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 transition-opacity hover:opacity-80">
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary active:scale-95 transition-transform">menu</button>
+<span class="font-headline-md text-headline-md text-primary tracking-tight">Zizah Spices</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary active:scale-95 transition-transform">shopping_cart</button>
+</div>
+</nav>
+<main class="pt-16 pb-24">
+<!-- Hero Section -->
+<section class="relative w-full min-h-[618px] flex flex-col md:flex-row items-center overflow-hidden px-margin-mobile md:px-margin-desktop py-lg">
+<div class="absolute inset-0 organic-texture z-0"></div>
+<div class="z-10 w-full md:w-1/2 flex flex-col gap-sm">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Hand-Crafted Purity</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary max-w-xl">
+                    The Healing Power of <span class="italic">Ancient Spices</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mt-4">
+                    Elevate your culinary journey and nourish your well-being with our ethically sourced, artisanal spices and organic Moringa.
+                </p>
+<div class="flex gap-sm mt-md">
+<button class="bg-primary text-white px-lg py-3 rounded-full font-label-caps text-label-caps active:scale-95 transition-all shadow-lg shadow-primary/10">SHOP NOW</button>
+<button class="border border-primary text-primary px-lg py-3 rounded-full font-label-caps text-label-caps active:scale-95 transition-all">OUR STORY</button>
+</div>
+</div>
+<div class="relative w-full md:w-1/2 h-[400px] md:h-[600px] mt-lg md:mt-0 flex justify-center items-center">
+<div class="absolute w-[80%] h-[80%] bg-tertiary-fixed rounded-full blur-[100px] opacity-20"></div>
+<div class="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
+<div class="w-full h-full bg-cover bg-center" data-alt="A top-down, high-end lifestyle photograph of vibrant organic spices including bright orange turmeric, deep brown cinnamon sticks, and lush green moringa leaves arranged artistically on a textured cream ceramic plate. The lighting is soft and natural, emphasizing the fine textures of the powders and the organic veins of the leaves. The aesthetic is clean, minimalist, and luxury apothecary, with a warm color palette of earthy oranges, browns, and muted greens." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwxH97U-CJhsW7KyjKmPuxmDeuvrG_jEBeiPQkHXQtKQSdB39zsScnJYjoSS5zOTS0McMBetWn53jOgFUYfszDDITUJJwAa9fNP-fciVN2NYPBAhemddgViIrvTOerVGl8DR-L2c8T6NSxYimxktqpG9Yaj37hddgIfvfpfRkBhAgnS9MemdKAI3aHW2NY6zk5HFuI7Q0Q9KSvGDWTBrlcp8fLNb9AtqQOWGapfxUrUOV_5neUCDCLQlE2ED7DUaa5ReHw_rjCKMg')"></div>
+<div class="absolute bottom-6 right-6 w-24 h-24 bg-primary rounded-full flex items-center justify-center border-4 border-background shadow-xl">
+<span class="text-white font-headline-sm text-headline-sm">Z</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories Bento -->
+<section class="px-margin-mobile md:px-margin-desktop py-xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-7 group cursor-pointer overflow-hidden rounded-xl bg-surface-container-low h-[350px] relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A close-up shot of various dark wooden spice bowls filled with rich, textured spice blends like beef masala and curry powders. Dustings of spice are scattered on a dark slate background, lit with dramatic, moody side-lighting to highlight the artisanal quality. The scene feels premium and culinary-focused, utilizing a palette of deep rusts, umbers, and warm browns." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-2qHZlXWnCo2FOtlNILL-19QQA9oX38EMXvXfTuPggTM4OQ4yPOgNzK8dmp_D261VIrlFLS0Z1V9zvXkiikfV9l0ZGVK-rBQ1QNeDtJzR7EweAevjZGgcrHSv0uxoJDkkdJOX5d4MEEbx6ffuwKOszt8PWakjZDIVobnzyQk7hG3m9pWIv1_kRKmL9FVOQLhCk4yGhqhLYpHW4O9OE0iM_KVKYJsv7mOruYBCKya3Jj3-XFGcA5_4SRbSDVJiZ46iI3lWLuwZzHI')"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-lg text-white">
+<h3 class="font-headline-md text-headline-md">Shop Spices</h3>
+<p class="font-body-md text-body-md opacity-90">Essential blends for the modern kitchen.</p>
+<div class="mt-4 flex items-center gap-base">
+<span class="font-label-caps text-label-caps border-b border-white">EXPLORE</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 group cursor-pointer overflow-hidden rounded-xl bg-tertiary-container h-[350px] relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A bright and airy wellness-focused photograph featuring a glass of green moringa tea next to a pile of vibrant green moringa powder on a light-colored wooden surface. The background is a blurred garden scene with soft morning sunlight filtering through leaves. The image communicates health, vitality, and natural healing, using a fresh palette of greens and soft creams." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAer9gizzqNpjVfOt7iacVlyfVVW8ZlHIyealOZ1uoThS6VJDH74YaCyVq2v2ZUyKWNWKbYzwEflteRwaRTqU5hbpSSqr_IU8_lYH7dIxGJDzkwIDJdY7xHzUoU-IadZcBw9c90GNZm8RyosxeDjt5VxxuNbJBotTHBNXEvwFAnDH2YzmXMLZ5a6innlQizyJjcwKIsCFvAt6_mnomltsZy_Zypn5qGDV88HZvKjSYoQj8kU20eBoABgyKflxxcjcBj9sVx0YT1LsM')"></div>
+<div class="absolute inset-0 bg-tertiary/20 group-hover:bg-tertiary/40 transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-lg text-white">
+<h3 class="font-headline-md text-headline-md">Natural Healing</h3>
+<p class="font-body-md text-body-md opacity-90">Unlock the wellness benefits of Moringa.</p>
+<div class="mt-4 flex items-center gap-base">
+<span class="font-label-caps text-label-caps border-b border-white">DISCOVER</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section><section class="px-margin-mobile md:px-margin-desktop py-xl bg-background relative overflow-hidden">
+<div class="absolute inset-0 organic-texture z-0"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center gap-lg">
+<div class="w-full md:w-1/2">
+<div class="relative group">
+<div class="absolute -inset-4 bg-tertiary-fixed/20 rounded-full blur-3xl opacity-50 group-hover:opacity-70 transition-opacity"></div>
+<div class="relative aspect-square rounded-2xl overflow-hidden shadow-2xl border border-outline-variant/20">
+<img alt="Founder of Zizah Spices" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH8rPSyeWqgzI_E24e0Cl60TO4rM8DUR2-kJF9DjsciF72OMrgqjK2dQQifp667LZ2uDN1LsWhZ2-p9lqFgJBnHiKphd3LJrVIhtlYAI7Fzzs1a_VqS5UosEgnzqf9QZXXgHi4uZvpSBiDCBl1qwt-_iPPtyOLTCWdtjokduoimQ4_bz03uTXcEFgaczWcwuc9P_Wa7zcp79eSvkJQEDDVPEpUBoxWEyRFOnD6TVjOu4v_TrkcjBpXnZhbvchvQRI387BCht5KKCE"/>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 flex flex-col gap-sm">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Our Story</span>
+<h2 class="font-headline-md text-headline-md text-primary">Meet Our Founder</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4">
+        Meet our founder, whose passion for the healing power of spices and botanicals brought Zizah Spices to life. From the heart of Dar es Salaam, we bring nature's purest remedies to your home.
+      </p>
+<div class="mt-md">
+<button class="border-b border-primary text-primary font-label-caps text-label-caps py-1 hover:opacity-80 transition-opacity">READ FULL STORY</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="px-margin-mobile md:px-margin-desktop py-xl bg-surface-container-low/30">
+<div class="flex flex-col md:flex-row justify-between items-end mb-lg gap-md">
+<div>
+<span class="font-label-caps text-label-caps text-primary tracking-widest">Our Selection</span>
+<h2 class="font-headline-md text-headline-md mt-2">Featured Remedies</h2>
+</div>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant" href="#">View All Products</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product 1 -->
+<div class="apothecary-card flex flex-col gap-sm">
+<div class="aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden relative border border-outline-variant/10">
+<div class="w-full h-full bg-cover bg-center" data-alt="A premium glass jar with a minimalist cream label titled 'Beef Masala' by Zizah Spices. The jar is filled with a rich, dark brown aromatic spice blend and sits on a clean, off-white surface with a single cinnamon stick resting beside it. Soft, studio lighting creates delicate shadows, emphasizing the high-quality apothecary packaging." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDfrDK2oJ8-ht8VhXVfhQeWYfxAe11pSusmnZ_IOiQoKe6yUxjgTEG0EZf_ouS8s398V9hoKQ9C-IVUpD-sHRK1t-k0VKGk_kWO8afrPFfzEef1lXBslc6ouMZYQFA9qkCi2nF6-XfRyFhPTQwqyHRFCkIat8w_NNeNi6CAD4e0B4nxCJmYimm2KwakAW3SBNWInK1S-3OAGIU5QQFxCKeY9avyolGhbajLIjxD6-rxaXTYk9eS36O886TzRBOOZ2G7E-FV95B8xRE')"></div>
+<button class="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-full text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start px-xs">
+<div>
+<h4 class="font-body-lg text-body-lg font-medium">Beef Masala</h4>
+<p class="text-on-surface-variant text-sm">Savory Heritage Blend</p>
+</div>
+<span class="font-body-lg text-body-lg text-primary">$12.00</span>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="apothecary-card flex flex-col gap-sm">
+<div class="aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden relative border border-outline-variant/10">
+<div class="w-full h-full bg-cover bg-center" data-alt="A minimalist apothecary-style glass jar containing bright yellow Turmeric Masala powder. The label is clean and elegant with 'Zizah Spices' branding. It is positioned asymmetrically in the frame against a warm cream background, lit with soft, diffused sunlight to highlight the intense pigment of the turmeric." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSvG0EcemLQTBEZ7EwcFn5kleA2q-sezvs2XlTbIJ2ln47yuSAMfvtH0DZKOhQx7tna9mLIY2V4H_T0SR_cFymn_wHHD2nSg7nuWVlxsBKxLqjmxM3Ct7xAfwC2-b0NQvl3UdSQs_YHxOZ1zUSopy791GNHuNmZssc8XNUMKbsXUPWDRczNjUzZx66zmy509V53cQ5HBnTPKbS2j5oy2kzh1DNPGu-Yfmwy8AaLRk15YqnCBFlF09QdNOOO-OWTtf6mPhosTG5zCQ')"></div>
+<button class="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-full text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start px-xs">
+<div>
+<h4 class="font-body-lg text-body-lg font-medium">Turmeric Masala</h4>
+<p class="text-on-surface-variant text-sm">Golden Anti-inflammatory</p>
+</div>
+<span class="font-body-lg text-body-lg text-primary">$10.00</span>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="apothecary-card flex flex-col gap-sm">
+<div class="aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden relative border border-outline-variant/10">
+<div class="w-full h-full bg-cover bg-center" data-alt="A sleek, modern apothecary jar filled with fine green Moringa Powder. The label features a small botanical leaf illustration. The jar is placed next to some fresh, vibrant moringa leaves on a light stone surface, communicating purity and health-conscious artisanal quality. High-key, bright lighting aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAz_Ar5ykV6xDuteieQny70o6A19VoIpoSWaN_R5RlCjLE95EFGxQuk9ZeWitYJbCSiv5izf3swswIEZlYvNEzp68lOAXoOV8h8-RnE89uU1Ad13hUd80b5IeVKqgoITLMbFOfXtOoEa-U2nc1Bg3XdcdgPzLdp2o0stZ2BgAdcmGgXn5b_W2XzJiZAZhZ-7X2CDl5uPRpuwFvwyxtp87pMnp0RNVmm04ZBGS2B9-p3ZIGING2Ov53TJnvWxInRjy2atLUaN22ZuD4')"></div>
+<button class="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-full text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start px-xs">
+<div>
+<h4 class="font-body-lg text-body-lg font-medium">Moringa Powder</h4>
+<p class="text-on-surface-variant text-sm">Pure Green Superfood</p>
+</div>
+<span class="font-body-lg text-body-lg text-primary">$15.00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full p-margin-mobile flex flex-col gap-sm items-center text-center pb-24 bg-surface-container-highest mt-xl">
+<span class="font-headline-sm text-headline-sm text-primary">Zizah Spices</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                © 2024 Zizah Spices. Sinza Mission street No.14, Dar es Salaam.
+            </p>
+<div class="flex flex-wrap justify-center gap-md mt-sm">
+<span class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer">0713648720 / 0767592269</span>
+<span class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer">@zizah_spices_natur_heal</span>
+</div>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-surface-container-low border-t border-outline-variant/10 rounded-t-full shadow-lg">
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">nutrition</span>
+<span class="font-label-caps text-label-caps mt-1">Spices</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-variant/50 transition-colors active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined">medical_services</span>
+<span class="font-label-caps text-label-caps mt-1">Healing</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-variant/50 transition-colors active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-caps text-label-caps mt-1">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-variant/50 transition-colors active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-label-caps mt-1">Profile</span>
+</div>
+</nav>
+<script>
+        // Micro-interaction for scroll effects
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.add('bg-white/95');
+                nav.classList.add('backdrop-blur-sm');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.remove('bg-white/95');
+                nav.classList.remove('backdrop-blur-sm');
+            }
+        });
+
+        // Add to cart click animation
+        document.querySelectorAll('.apothecary-card').forEach(card => {
+            card.addEventListener('click', () => {
+                // Future interaction: Open detail or quick add
+                console.log('Product clicked');
+            });
+        });
+    </script>
+</body></html>

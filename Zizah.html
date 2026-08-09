@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zizah Spices & Naturheal | Pure Tanzanian Botanicals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Work Sans', sans-serif; background-color: #fcfbf8; color: #2d2a26; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .elegant-card { transition: all 0.4s ease; border: 1px solid #e7e4df; background: white; }
+        #admin-portal { display: none; background: #2d2a26; color: #e7e4df; padding: 40px; }
+        .admin-input { background: #3d3a36; border: 1px solid #555; color: white; padding: 10px; width: 100%; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <!-- Customer Navigation -->
+    <nav class="flex justify-between items-center px-10 py-6 border-b border-[#e7e4df]">
+        <h1 class="text-3xl text-[#6f240a]">Zizah Spices</h1>
+        <div class="space-x-8 text-sm uppercase tracking-widest">
+            <a href="#shop" class="hover:text-[#6f240a]">Shop</a>
+            <button onclick="accessAdmin()" class="text-gray-400 hover:text-gray-600 text-xs uppercase">Merchant Access</button>
+        </div>
+    </nav>
+
+    <!-- Admin Portal (Strictly Functional) -->
+    <section id="admin-portal">
+        <h2 class="text-2xl font-bold mb-6 border-b border-gray-600 pb-2 uppercase">Merchant Control Center</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="mb-4">Add/Update Product</h3>
+                <input type="text" id="p-name" placeholder="Product Name" class="admin-input">
+                <input type="text" id="p-price" placeholder="Price (e.g. 5000)" class="admin-input">
+                <input type="text" id="p-img" placeholder="Image URL" class="admin-input">
+                <input type="text" id="p-offer" placeholder="Offer/Discount Info" class="admin-input">
+                <button onclick="saveProduct()" class="bg-[#6f240a] text-white w-full py-3 hover:bg-[#8a2d0d]">SAVE PRODUCT</button>
+            </div>
+            <div>
+                <h3>Manage Current Inventory</h3>
+                <div id="admin-list" class="space-y-2 mt-4 text-sm"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Shop -->
+    <main id="shop" class="px-10 py-16 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <!-- Products injected by JavaScript -->
+    </main>
+
+    <script>
+        let products = [
+            { id: 1, name: "Uji Masala", price: "5,000", img: "https://via.placeholder.com/300?text=Uji+Masala", offer: "" },
+            { id: 2, name: "Turmeric Powder", price: "5,000", img: "https://via.placeholder.com/300?text=Turmeric+Powder", offer: "" },
+            { id: 3, name: "Black Pepper Powder", price: "7,000", img: "https://via.placeholder.com/300?text=Black+Pepper+Powder", offer: "10% OFF" },
+            { id: 4, name: "Cinnamon Powder", price: "5,000", img: "https://via.placeholder.com/300?text=Cinnamon+Powder", offer: "" },
+            { id: 5, name: "Cardamom Powder", price: "7,000", img: "https://via.placeholder.com/300?text=Cardamom+Powder", offer: "" },
+            { id: 6, name: "Biriani Masala", price: "5,000", img: "https://via.placeholder.com/300?text=Biriani+Masala", offer: "" },
+            { id: 7, name: "Tea Masala", price: "5,000", img: "https://via.placeholder.com/300?text=Tea+Masala", offer: "" },
+            { id: 8, name: "Garam Masala", price: "5,000", img: "https://via.placeholder.com/300?text=Garam+Masala", offer: "" },
+            { id: 9, name: "Curry Powder", price: "5,000", img: "https://via.placeholder.com/300?text=Curry+Powder", offer: "" },
+            { id: 10, name: "Pilau Masala", price: "5,000", img: "https://via.placeholder.com/300?text=Pilau+Masala", offer: "" },
+            { id: 11, name: "Moringa Leaf Powder", price: "7,000", img: "https://via.placeholder.com/300?text=Moringa+Powder", offer: "" },
+            { id: 12, name: "Zizah Essential Oil", price: "7,000", img: "https://via.placeholder.com/300?text=Essential+Oil", offer: "SALE" }
+        ];
+
+        function render() {
+            const shop = document.getElementById('shop');
+            const adminList = document.getElementById('admin-list');
+            
+            shop.innerHTML = products.map(p => `
+                <div class="elegant-card p-4 rounded-lg relative">
+                    ${p.offer ? `<span class="absolute top-4 left-4 bg-red-600 text-white text-[10px] px-2 py-1">${p.offer}</span>` : ''}
+                    <img src="${p.img}" alt="${p.name}" class="w-full h-64 object-cover mb-4">
+                    <h3 class="text-xl">${p.name}</h3>
+                    <p class="text-[#6f240a] font-bold mt-2">${p.price} TZS</p>
+                    <button class="mt-4 w-full border border-black py-2 hover:bg-black hover:text-white transition">ADD TO CART</button>
+                </div>
+            `).join('');
+
+            adminList.innerHTML = products.map(p => `
+                <div class="flex justify-between bg-black p-2">
+                    <span>${p.name}</span>
+                    <button onclick="removeProduct(${p.id})" class="text-red-400">REMOVE</button>
+                </div>
+            `).join('');
+        }
+
+        function saveProduct() {
+            const newP = {
+                id: Date.now(),
+                name: document.getElementById('p-name').value,
+                price: document.getElementById('p-price').value,
+                img: document.getElementById('p-img').value,
+                offer: document.getElementById('p-offer').value
+            };
+            products.push(newP);
+            render();
+        }
+
+        function removeProduct(id) {
+            products = products.filter(p => p.id !== id);
+            render();
+        }
+
+        function accessAdmin() {
+            const pass = prompt("Enter Merchant Passcode:");
+            if (pass === "zizah") {
+                document.getElementById('admin-portal').style.display = 'block';
+            } else {
+                alert("Invalid Access");
+            }
+        }
+
+        render();
+    </script>
+</body>
+</html>
